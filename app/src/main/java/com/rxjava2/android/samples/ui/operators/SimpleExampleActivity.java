@@ -68,21 +68,21 @@ public class SimpleExampleActivity extends AppCompatActivity {
             public void onNext(String value) {
                 textView.append(" onNext : value : " + value);
                 textView.append(AppConstant.LINE_SEPARATOR);
-                Log.d(TAG, " onNext : value : " + value);
+                Log.d(TAG, " onNext : value : " + value + ":" + Thread.currentThread());
             }
 
             @Override
             public void onError(Throwable e) {
                 textView.append(" onError : " + e.getMessage());
                 textView.append(AppConstant.LINE_SEPARATOR);
-                Log.d(TAG, " onError : " + e.getMessage());
+                Log.d(TAG, " onError : " + e.getMessage() + ":" + Thread.currentThread());
             }
 
             @Override
             public void onComplete() {
                 textView.append(" onComplete");
                 textView.append(AppConstant.LINE_SEPARATOR);
-                Log.d(TAG, " onComplete");
+                Log.d(TAG, " onComplete" + ":" + Thread.currentThread());
             }
         };
     }

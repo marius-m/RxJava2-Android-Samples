@@ -1,6 +1,7 @@
 package com.rxjava2.android.samples;
 
 import android.app.Application;
+import android.os.Debug;
 
 import com.rxjava2.android.samples.model.Events;
 import com.rxjava2.android.samples.ui.rxbus.RxBus;
@@ -9,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
 import io.reactivex.functions.Consumer;
+import timber.log.Timber;
 
 /**
  * Created by threshold on 2017/1/12.
@@ -22,6 +24,7 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        Timber.plant(new Timber.DebugTree());
         bus = new RxBus();
     }
 
